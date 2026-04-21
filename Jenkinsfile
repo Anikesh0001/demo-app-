@@ -1,13 +1,13 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven3' // Must match the Name in Global Tool Configuration
-        jdk 'JDK17'    // Must match the Name in Global Tool Configuration
+        maven 'Maven3' // This name must match the Name in Step 3 
+        jdk 'JDK17'    // This name must match the Name in Step 2 
     }
     stages {
         stage('Checkout') {
             steps {
-                // Ensure this matches your specific repository
+                // Ensure this URL is your specific repository
                 git 'https://github.com/Anikesh0001/demo-app-.git' [cite: 160]
             }
         }
@@ -16,6 +16,6 @@ pipeline {
                 sh 'mvn clean compile' [cite: 165]
             }
         }
-        // ... rest of your stages [cite: 168, 173]
+        // ... include Test and Package stages as well [cite: 168, 173]
     }
 }
