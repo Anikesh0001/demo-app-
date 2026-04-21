@@ -9,8 +9,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Pointing to your specific repository URL
-                git 'https://github.com/Anikesh0001/demo-app-.git'
+                // Explicitly defining the 'main' branch
+                git branch: 'main', url: 'https://github.com/Anikesh0001/demo-app-.git'
             }
         }
         
